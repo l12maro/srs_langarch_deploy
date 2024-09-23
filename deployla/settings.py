@@ -23,13 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xwngyvwb%(r3yoq!-6utfi#-wbn$th^fki-dq1fq5)q@*2j7ew'
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get("DEBUG")
 
-ALLOWED_HOSTS = ['www.tsuutinalanguagearchive.com', 'tsuutinalanguagearchive.com', 'https://tsuutinalanguagearchive.com']
-
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
 # Application definition
 
@@ -80,11 +79,11 @@ WSGI_APPLICATION = 'deployla.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tsuuhtnj_deploy',
-        'USER': "tsuuhtnj_sarcee",
-        'PASSWORD': "treaty7!Alberta",
-        'HOST': "localhost",
-        'PORT': "5432",
+        'NAME': os.environ.get("DB_NAME"),
+        'USER': os.environ.get("DB_USERNAME"),
+        'PASSWORD': os.environ.get("DB_PW"),
+        'HOST': os.environ.get("DB_HOST"),
+        'PORT': os.environ.get("DB_PORT"),
     }
 }
 
