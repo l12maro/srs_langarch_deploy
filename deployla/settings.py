@@ -127,8 +127,8 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "static_media")
+MEDIA_URL = 'https://media.tsuutinalanguagearchive.com/'
+MEDIA_ROOT = '/home/tsuuhtnj/media.tsuutinalanguagearchive.com/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
